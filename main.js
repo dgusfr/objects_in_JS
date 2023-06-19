@@ -1,14 +1,52 @@
-let listaDeCompras = ['Arroz', 'Biscoito', 'Suco']
+let listaDeItens = []
 
-//Declaração do objeto
-const listaDeItens = {
-    item1: 'biscoito',
-    item2: 'Suco',
-    quantidade1: 3,
-    quantidade2: 4,
-    mostrarItens: function() {
-        alert('Comprei ' + listaDeItens.quantidade1 + ' pacotes de ' + listaDeItens.item1)
+const form = document.getElementById("form-itens")
+//input dos itens no campo te entrada:
+const itensInput = document.getElementById("receber-item")
+
+const ulItens = document.getElementById("lista-de-itens")
+
+//Evento de escuta para quando o formulário é submetido
+//A função passada como argumento é executada quando o evento ocorre
+form.addEventListener('submit', function (event) {
+    event.preventDefault()
+    salvarItem()
+    mostrarItem()
+})
+
+function salvarItem() {
+    //Obtém o valor do elemento de entrada de texto 'itensInput' e o armazena na variável 'comprasItem'
+    const comprasItem = itensInput.value;
+    //'COMPARAÇÃO DE OBJETOS' Verifica se o usuario esta tentando adicionar um item duplicado a lista
+    const checarDuplicado = listaDeItens.some((elemento) => elemento.valor.toUpperCase() === comprasItem.toUpperCase())
+
+    if (checarDuplicado) {
+        alert("Item já existe.")
+    } else {
+         listaDeItens.push({
+            valor: comprasItem,
+        })
     }
+
+    console.log(listaDeItens)
 }
 
-listaDeItens.mostrarItens()
+//Metodo de callback 
+//O forEach() percorre cada elemento do array e executa a função de callback fornecida como argumento
+function mostrarItem() {
+    ulItens.innerHTML
+    listaDeItens.forEach((elemento, index) => {
+        //+= para adicionar conteúdo HTML ao innerHTML existente. A cada interação, um novo elemento de lista <li> é adicionado ao ulItens, contendo os detalhes do item.
+        ulItens.innerHTML += `
+    <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
+        <div>
+            <input type="checkbox" class="is-clickable" />
+            <input type="text" class="is-size-5" value="${elemento.valor}"></input>
+        </div>
+        <div>
+            <i class="fa-solid fa-trash is-clickable deletar"></i>
+        </div>
+    </li>
+    `
+    })
+}
