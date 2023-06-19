@@ -6,6 +6,8 @@ const itensInput = document.getElementById("receber-item")
 
 const ulItens = document.getElementById("lista-de-itens")
 
+const ulItensComprados = document.getElementById("itens-comprados")
+
 //Evento de escuta para quando o formulário é submetido
 //A função passada como argumento é executada quando o evento ocorre
 form.addEventListener('submit', function (event) {
@@ -25,6 +27,7 @@ function salvarItem() {
     } else {
          listaDeItens.push({
             valor: comprasItem,
+            checar: false
         })
     }
 
@@ -36,17 +39,43 @@ function salvarItem() {
 function mostrarItem() {
     ulItens.innerHTML
     listaDeItens.forEach((elemento, index) => {
+        if(elemento.checar) {
+            ulItensComprados.innerHTML += `
+            <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
+                <div>
+                    <input type="checkbox" checked class="is-clickable" />
+                    <span class="itens-comprados is-size-5">${elemento.valor}</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-trash is-clickable deletar"></i>
+                </div>
+            </li>
+            `    
+            } else {
         //+= para adicionar conteúdo HTML ao innerHTML existente. A cada interação, um novo elemento de lista <li> é adicionado ao ulItens, contendo os detalhes do item.
-        ulItens.innerHTML += `
-    <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
-        <div>
-            <input type="checkbox" class="is-clickable" />
-            <input type="text" class="is-size-5" value="${elemento.valor}"></input>
-        </div>
-        <div>
-            <i class="fa-solid fa-trash is-clickable deletar"></i>
-        </div>
-    </li>
+            ulItens.innerHTML += `
+            <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
+                <div>
+                    <input type="checkbox" class="is-clickable" />
+                    <input type="text" class="is-size-5" value="${elemento.valor}"></input>
+                </div>
+                <div>
+                    <i class="fa-solid fa-trash is-clickable deletar"></i>
+                </div>
+            </li>
     `
+            }
     })
+
+    const inputsCheck = document.querySelectorAll('input[type="checkbox"]')
+        //'i' é o parametro da função de callback Foreach
+        inputsCheck.forEach(i => {
+            //i representa cada item da NodeList retornada pela função querySelectorAll
+            i.addEventListener('click', (evento) => {
+                const valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value')
+                    listaDeItens[valorDoElemento].checar = evento.target.checked
+                    console.log(listaDeItens[valorDoElemento].checar)
+            })
+    })
+
 }
