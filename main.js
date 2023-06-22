@@ -14,6 +14,7 @@ form.addEventListener('submit', function (event) {
     event.preventDefault()
     salvarItem()
     mostrarItem()
+    itensInput.focus()
 })
 
 function salvarItem() {
@@ -31,13 +32,16 @@ function salvarItem() {
         })
     }
 
-    console.log(listaDeItens)
+    itensInput.value = ''
+
 }
 
 //Metodo de callback 
 //O forEach() percorre cada elemento do array e executa a função de callback fornecida como argumento
 function mostrarItem() {
-    ulItens.innerHTML
+    ulItens.innerHTML = ''
+    ulItensComprados.innerHTML = ''
+
     listaDeItens.forEach((elemento, index) => {
         if(elemento.checar) {
             ulItensComprados.innerHTML += `
@@ -52,7 +56,7 @@ function mostrarItem() {
             </li>
             `    
             } else {
-        //+= para adicionar conteúdo HTML ao innerHTML existente. A cada interação, um novo elemento de lista <li> é adicionado ao ulItens, contendo os detalhes do item.
+            //+= para adicionar conteúdo HTML ao innerHTML existente. A cada interação, um novo elemento de lista <li> é adicionado ao ulItens, contendo os detalhes do item.
             ulItens.innerHTML += `
             <li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
                 <div>
