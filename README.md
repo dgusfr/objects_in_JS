@@ -2,6 +2,22 @@
 
 Este é um simples aplicativo de lista de compras desenvolvido em HTML, CSS e JavaScript. Ele permite que o usuário adicione itens à lista, marque-os como comprados e edite os itens existentes.
 
+<p align="center">
+  <img width="400" src="img/proj1.png" alt="foto1">
+</p>
+
+#### Adicionando Lista de Itens
+
+<p align="center">
+  <img width="400" src="img/proj2.png" alt="foto2">
+</p>
+
+#### Funcionalidade de "riscar" o que já foi pego
+
+<p align="center">
+  <img width="400" src="img/proj3.png" alt="foto3">
+</p>
+
 ## Funcionalidades
 
 - Adição de itens à lista.
@@ -26,9 +42,3 @@ Este é um simples aplicativo de lista de compras desenvolvido em HTML, CSS e Ja
 
 - [Bulma](https://bulma.io/): Framework CSS para criar interfaces responsivas.
 - [Font Awesome](https://fontawesome.com/): Biblioteca de ícones para aprimorar a estética.
-
-
-
-
-
-
