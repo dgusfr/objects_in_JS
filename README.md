@@ -3,19 +3,19 @@
 Este é um simples aplicativo de lista de compras desenvolvido em HTML, CSS e JavaScript. Ele permite que o usuário adicione itens à lista, marque-os como comprados e edite os itens existentes.
 
 <p align="center">
-  <img width="400" src="img/proj1.png" alt="foto1">
+  <img src="img/proj1.png" alt="foto1">
 </p>
 
 #### Adicionando Lista de Itens
 
 <p align="center">
-  <img width="400" src="img/proj2.png" alt="foto2">
+  <img src="img/proj2.png" alt="foto2">
 </p>
 
 #### Funcionalidade de "riscar" o que já foi pego
 
 <p align="center">
-  <img width="400" src="img/proj3.png" alt="foto3">
+  <img src="img/proj3.png" alt="foto3">
 </p>
 
 ## Funcionalidades
