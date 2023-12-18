@@ -1,38 +1,38 @@
 html {
-    background: linear-gradient(177.52deg, #4574E3 2.11%, #154580 81.34%);
-    background-repeat: no-repeat;
-    height: 100%;
+  background: linear-gradient(177.52deg, #b0c4de 2.11%, #b0c4de 81.34%);
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 body {
-    font-family: 'Montserrat', 'sans-serif', 'Mansalva', cursive;
+  font-family: "Raleway", "sans-serif";
 }
 
-h2, footer {
-    font-family: 'Mansalva';
+h2,
+footer {
+  font-family: "Raleway", "sans-serif";
 }
 
 button {
-    border: none;
+  border: none;
 }
 
 .itens-comprados {
-text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .borda-lista {
-    border-bottom: dotted 2px blue;
+  border-bottom: dotted 2px #b0c4de;
 }
 
 input:disabled {
-    border: none;
-    background: none;
-    color: black;
+  border: none;
+  background: none;
+  color: black;
 }
 
 input {
-    border: none;
-    background: none;
-    color: black;
+  border: none;
+  background: none;
+  color: black;
 }
-

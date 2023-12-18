@@ -1,6 +1,8 @@
-# Lista de Compras
+# Lista de Compras com JS
 
-Este é um simples aplicativo de lista de compras desenvolvido em HTML, CSS e JavaScript. Ele permite que o usuário adicione itens à lista, marque-os como comprados e edite os itens existentes.
+Este é um aplicativo de lista de compras desenvolvido em HTML, CSS e JavaScript. Ele permite que o usuário adicione itens à lista, marque-os como comprados e edite os itens existentes.
+Nele é utilizado DOM para manipular as entradas e também é feita a escrita no HTML, acrescentando itens na lista, além disso, o localStorage é utilizado para armazenar
+os dados adicionados na lista.
 
 <p align="center">
   <img src="img/proj1.png" alt="foto1">
